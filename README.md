@@ -1,4 +1,4 @@
-# gh-pages-template
+# GitHub Pages Template
 
 ### Make your github project page stylish
 
