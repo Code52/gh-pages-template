@@ -2,11 +2,18 @@
 
 ### Make your github project page stylish
 
-**NOTE:** will test these methods out. Use at your own risk for now.
+This is a simple Jekyll template that the Code52 team have used to style our project pages. It is intended to be a landing page to a GitHub repository and include basic information and links for further information.
 
+### Examples
+
+ - [MarkPad](http://code52.org/DownmarkerWPF/)
+ - [ASP.NET Internationalization](http://code52.org/aspnet-internationalization/)
+ 
 ## Installation
 
-To integrate these changes into an existing repository, follow
+To integrate these changes into an existing repository, follow these instructions:
+
+**NOTE:** will test these methods out. Use at your own risk for now.
 
 ### Check if you have a gh-pages branch
 
@@ -50,11 +57,11 @@ Once you have those changes in place, start editing the values to get your site 
 **_config.yml**
 
 	appname: Your Project
-	appslogan: 'something witty goes here'
+	appslogan: 'catchphrase goes here'
 	username: your-account
 	reponame: your-repo
-	accent: ff3333
-	darkaccent: d41c1c
+	accent: FF3333
+	darkaccent: 134A8A
 	description: 'Suspendisse vel elit a arcu pretium egestas non nec sapien. Curabitur augue dui, porttitor vitae aliquet sit amet, tempor vitae nisi. Curabitur accumsan sodales nunc ac pulvinar.'
 
 	feature1title: 'feature one'
@@ -69,7 +76,7 @@ Once you have those changes in place, start editing the values to get your site 
 
 This is the theme for the project site. It links to a pair of CSS files.
 
-    <!DOCTYPE html>
+	<!DOCTYPE html>
 	<html>
 		<head>
 			<meta charset='utf-8'>
@@ -79,7 +86,6 @@ This is the theme for the project site. It links to a pair of CSS files.
 			<link rel="shortcut icon" href="icon.png" />
 			<style>
 				{% include default.css %}
-				{% include nuget-button.min.css %}
 			</style>
 		</head>
 		<body>
@@ -99,12 +105,11 @@ This is the content for the root of the site - introducing the project and using
 	---
 
 	<div id="code52"><a href="http://www.code52.org">a code 52 project</a></div>
-	<h1>{{site.appslogan}}</h1>
+	<h1><span id="apptitle" class="accent">{{ site.appname }}</span>&nbsp;-&nbsp;{{site.appslogan}}</h1>
 	<div id="screenshot">
-		<img src="logo.png" alt="{{ site.appname }}" />
-		<div style="clear:both">&nbsp;</div>
+		<img src="screenshot.png">
+		<img src="dropshadow_border_top.png" id="screenshotbordertop" class="screenshotborder">
 	</div>
-	<div class="screenshotborder"></div>
 	<div id="features">
 		<div class="feature">
 			<h2>{{ site.feature1title}}</h2>
@@ -122,7 +127,8 @@ This is the content for the root of the site - introducing the project and using
 	</div>
 	<img src="dropshadow_border_bottom.png" id="screenshotborderbottom" class="screenshotborder" />
 	<div id="downloads">
-		<a href="getting-started.html"><img src="nuget.png" />Getting started</a><br /><br />
+		<a href="getting-started.html"><img src="start.png" />Getting started</a><br /><br />
+		<a href="http://github.com/{{ site.username }}/{{ site.reponame }}/downloads"><img src="windows.png" />Download for Windows</a><br /><br />
 		<a href="http://github.com/{{ site.username }}/{{ site.reponame }}"><img src="github.png" />Get the source</a>
 	</div>
 	{{content}}
